@@ -1,0 +1,39 @@
+{
+    "name": "ngekoding/terbilang",
+    "description": "A library to convert numbers and currency to words in Indonesian.",
+    "type": "library",
+    "keywords": [
+        "terbilang",
+        "numbers",
+        "to",
+        "words",
+        "currency",
+        "money"
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ngekoding\\Terbilang\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ngekoding\\Terbilang\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nur Muhammad",
+            "email": "blog.nurmuhammad@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
+    }
+}
