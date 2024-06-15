@@ -59,6 +59,7 @@ class CurrencyNumberTest extends TestCase
         return [
             ['970800,78', 'sembilan ratus tujuh puluh ribu delapan ratus rupiah tujuh puluh delapan sen', ','],
             ['160500#25', 'seratus enam puluh ribu lima ratus rupiah dua puluh lima sen', '#'],
+            ['-Rp1.000.000,00', 'minus satu juta rupiah', ','],
           ];
     }
 }

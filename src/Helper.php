@@ -12,6 +12,6 @@ class Helper
      */
     public static function digitsOnly($str)
     {
-        return intval(preg_replace('/\D/', '', $str));
+        return intval(preg_replace('/(?!^-)[^\d]/', '', $str));
     }
 }

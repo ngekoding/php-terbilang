@@ -79,6 +79,7 @@ class RegularNumberTest extends TestCase
             [123456.79, 'seratus dua puluh tiga ribu empat ratus lima puluh enam koma tujuh sembilan'],
             [100502.50, 'seratus ribu lima ratus dua koma lima'],
             ['100502.50', 'seratus ribu lima ratus dua koma lima nol'],
+            ['-1000000', 'minus satu juta'],
         ];
     }
 
