@@ -57,14 +57,8 @@ class Terbilang
             $number = Helper::digitsOnly($numberParts[0]);
             $decimal = isset($numberParts[1]) ? Helper::digitsOnly($numberParts[1]) : null;
         } else {
-            /**
-             * Convert $number to string and keep all the characters
-             * The zero suffix at the decimal will be ignored
-             */
-            $number = number_format($number, max(0, strlen(strchr($number, '.')) - 1), '.', '');
-
             // Separate integer and decimal parts
-            $numberParts = explode($decimalSeparator, $number);
+            $numberParts = explode('.', $number);
             $number = intval($numberParts[0]);
             $decimal = isset($numberParts[1]) ? intval($numberParts[1]) : null;
         }
@@ -109,7 +103,7 @@ class Terbilang
             $number = number_format($number, 2, '.', '');
             
             // Separate integer and decimal parts
-            $numberParts = explode($decimalSeparator, $number);
+            $numberParts = explode('.', $number);
             $number = intval($numberParts[0]);
             $decimal = isset($numberParts[1]) ? intval($numberParts[1]) : null;
         }

@@ -51,21 +51,27 @@ echo Terbilang::convert('12345,67'); // Outputs: "dua belas ribu tiga ratus empa
 echo Terbilang::convert('12345,25', true); // Outputs: "dua belas ribu tiga ratus empat puluh lima rupiah dua puluh lima sen"
 ```
 
+**Note:** Will affected only for string input.
+
 ### Advanced Usage
 
 You can use either numeric or string inputs, but there are some important considerations when dealing with decimals.
 
-When using numeric input, trailing zeros after the decimal point are not preserved.  
-For example, the number `12345.500` will be presented as `12345.5`.
+For **regular numbers**, when using numeric input, trailing zeros after the decimal point are not preserved. For example, the number `12345.500` will be presented as `12345.5`.
 
-To handle the entire decimal number (including trailing zeros), use string input.
+Especially for **currency amounts**, two decimal places are always used to adhere to rupiah standards.
+
+To handle the entire input number, including trailing zeros after the decimal point, use string input.
 
 ```php
 echo Terbilang::convert(12345.50); // Outputs: "dua belas ribu tiga ratus empat puluh lima koma lima"
 echo Terbilang::convert('12345.50'); // Outputs: "dua belas ribu tiga ratus empat puluh lima koma lima nol"
+echo Terbilang::convert('12345.500'); // Outputs: "dua belas ribu tiga ratus empat puluh lima koma lima nol nol"
 
-echo Terbilang::convert(12345.50, true); // Outputs: "dua belas ribu tiga ratus empat puluh lima rupiah lima sen"
-echo Terbilang::convert('12345.50', true); // Outputs: "dua belas ribu tiga ratus empat puluh lima rupiah lima puluh sen"
+echo Terbilang::convert(12345.5, true); // Outputs: "dua belas ribu tiga ratus empat puluh lima rupiah lima puluh sen"
+echo Terbilang::convert(12345.50, true); // Outputs: "dua belas ribu tiga ratus empat puluh lima rupiah lima puluh sen"
+echo Terbilang::convert(12345.505, true); // Outputs: "dua belas ribu tiga ratus empat puluh lima rupiah lima puluh satu sen"
+echo Terbilang::convert('12345.500', true); // Outputs: "dua belas ribu tiga ratus empat puluh lima rupiah lima ratus sen"
 ```
 
 Additionally, with string input, you can easily pass already formatted numbers.

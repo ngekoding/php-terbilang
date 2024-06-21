@@ -49,7 +49,9 @@ class CurrencyNumberTest extends TestCase
             [1000000000, 'satu miliar rupiah'],
             [9876543210, 'sembilan miliar delapan ratus tujuh puluh enam juta lima ratus empat puluh tiga ribu dua ratus sepuluh rupiah'],
             [200000000, 'dua ratus juta rupiah'],
+            [900500.5, 'sembilan ratus ribu lima ratus rupiah lima puluh sen'],
             [900500.50, 'sembilan ratus ribu lima ratus rupiah lima puluh sen'],
+            [900500.505, 'sembilan ratus ribu lima ratus rupiah lima puluh satu sen'],
             ['900500.500', 'sembilan ratus ribu lima ratus rupiah lima ratus sen'],
           ];
     }
